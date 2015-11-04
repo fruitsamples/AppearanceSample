@@ -1,5 +1,5 @@
 /*
-	File:		ChasingArrowsSheet.cp
+	File:		RoundButtonSheet.h
 
 	Contains:	Sheet to create a chasing arrows control.
 
@@ -43,66 +43,20 @@
 	Copyright © 2000-2001 Apple Computer, Inc., All Rights Reserved
 */
 
-#include "ChasingArrowsSheet.h"
-#include "AppearanceHelpers.h"
-#if !BUILDING_FOR_CARBON_8
-	#include <Carbon/Carbon.h>
-#else
-	#include <Carbon.h>
-#endif
+#pragma once
 
-const ControlID 	kChasingArrowsSize = { 'Size', 6 };
+#include "CDEFTesterSheet.h"
 
-ChasingArrowsSheet::ChasingArrowsSheet( TWindow* parent )
-		: CDEFTesterSheet( CFSTR( "Chasing Arrows" ), parent )
+class RoundButtonSheet : public CDEFTesterSheet
 {
-	Show();
-}
-
-ChasingArrowsSheet::~ChasingArrowsSheet()
-{
-}
-
-
-ControlRef
-ChasingArrowsSheet::CreateControl()
-{
-	ControlRef				control;
-	Rect					bounds = { 0, 0, 64, 64 };	// use a bounds large enough for the large size of the control
-	ControlSize				controlSize = kControlSizeNormal;
-	SInt16					baseLine;
+	public:
+		RoundButtonSheet( TWindow* parent );
+		~RoundButtonSheet();
 	
-	::GetControlByID( GetWindowRef(), &kChasingArrowsSize, &control );
-	switch ( ::GetControlValue( control ) )
-	{
-		default:
-		case 1:
-			controlSize = kControlSizeNormal;
-			break;
-		case 2:
-			controlSize = kControlSizeLarge;
-			break;
-	}
-	
-	verify_noerr( CreateChasingArrowsControl( GetParentWindowRef(), &bounds, &control ) );
+	protected:
 
-	if ( control )
-	{
-		SetControlVisibility( control, false, false );
-
-		::SetControlData( control, 0, kControlSizeTag, sizeof( ControlSize ), &controlSize );
-		
-		//
-		// Prior to Leopard, the chasing arrows control ignored its ControlSize, and only looked at the control bounds,
-		// to determine whether to draw a normal or large image. In Leopard and later, setting the control size is sufficient.
-		// In Leopard and later, the control still uses its bounds if you do not set an explicit ControlSize.
-		//
-		if ( GetSystemVersion() < 0x1050 )
-		{
-			if ( GetBestControlRect( control, &bounds, &baseLine ) == noErr )
-				SetControlBounds( control, &bounds );
-		}
-	}
+		virtual ControlRef		CreateControl();
 	
-	return control;
-}
+	private:
+};
+

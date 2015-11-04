@@ -1,5 +1,5 @@
 /*
-	File:		ChasingArrowsSheet.cp
+	File:		RoundButtonSheet.cp
 
 	Contains:	Sheet to create a chasing arrows control.
 
@@ -43,7 +43,7 @@
 	Copyright © 2000-2001 Apple Computer, Inc., All Rights Reserved
 */
 
-#include "ChasingArrowsSheet.h"
+#include "RoundButtonSheet.h"
 #include "AppearanceHelpers.h"
 #if !BUILDING_FOR_CARBON_8
 	#include <Carbon/Carbon.h>
@@ -51,40 +51,96 @@
 	#include <Carbon.h>
 #endif
 
-const ControlID 	kChasingArrowsSize = { 'Size', 6 };
+const ControlID 	kRoundButtonSize = { 'Size', 0 }, kRoundButtonIcon = { 'Icon', 0 };
 
-ChasingArrowsSheet::ChasingArrowsSheet( TWindow* parent )
-		: CDEFTesterSheet( CFSTR( "Chasing Arrows" ), parent )
+OSStatus IconChangedHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent, void *inUserData)
 {
+	ControlRef iconPopup, sizePopup;
+
+	::GetControlByID( (WindowRef)inUserData, &kRoundButtonIcon, &iconPopup );
+	::GetControlByID( (WindowRef)inUserData, &kRoundButtonSize, &sizePopup );
+
+	//deactivate size popup if using help icon since help icon implies a size
+	if (GetControlValue(iconPopup) == 4)
+		DeactivateControl(sizePopup);
+	else
+		ActivateControl(sizePopup);
+	
+	return noErr;
+}
+
+RoundButtonSheet::RoundButtonSheet( TWindow* parent )
+		: CDEFTesterSheet( CFSTR( "Round Button" ), parent )
+{
+	ControlRef control;
+	EventTypeSpec myEventTypes = {kEventClassControl,kEventControlHit};
+
+	::GetControlByID( GetWindowRef(), &kRoundButtonIcon, &control );
+
+	InstallControlEventHandler(control, IconChangedHandler, 1, &myEventTypes, GetWindowRef(), nil);
+	
 	Show();
 }
 
-ChasingArrowsSheet::~ChasingArrowsSheet()
+RoundButtonSheet::~RoundButtonSheet()
 {
 }
 
 
 ControlRef
-ChasingArrowsSheet::CreateControl()
+RoundButtonSheet::CreateControl()
 {
 	ControlRef				control;
-	Rect					bounds = { 0, 0, 64, 64 };	// use a bounds large enough for the large size of the control
+	Rect					bounds = { 0, 0, 20, 20 };
 	ControlSize				controlSize = kControlSizeNormal;
 	SInt16					baseLine;
+	ControlButtonContentInfo roundButtonContent;
+	OSType					whichIcon = 0;
+	OSErr					theErr;
+	IconRef					theIcon = 0;
 	
-	::GetControlByID( GetWindowRef(), &kChasingArrowsSize, &control );
+	::GetControlByID( GetWindowRef(), &kRoundButtonSize, &control );
 	switch ( ::GetControlValue( control ) )
 	{
 		default:
 		case 1:
 			controlSize = kControlSizeNormal;
 			break;
+
 		case 2:
 			controlSize = kControlSizeLarge;
 			break;
 	}
 	
-	verify_noerr( CreateChasingArrowsControl( GetParentWindowRef(), &bounds, &control ) );
+	::GetControlByID( GetWindowRef(), &kRoundButtonIcon, &control );
+	switch ( ::GetControlValue( control ) )
+	{
+		case 2:
+			whichIcon = kBackwardArrowIcon;
+			break;
+
+		case 3:
+			whichIcon = kForwardArrowIcon;
+			break;
+
+		case 4:
+			whichIcon = kHelpIcon;
+			break;
+		
+		default:
+			whichIcon = 0;
+	}
+
+	if (whichIcon)
+	{
+		roundButtonContent.contentType = kControlContentIconRef;
+		theErr = GetIconRef(kOnSystemDisk, kSystemIconsCreator, whichIcon, &theIcon);
+		roundButtonContent.u.iconRef = theIcon;
+	}
+	else
+		roundButtonContent.contentType = kControlNoContent;
+	
+	verify_noerr( CreateRoundButtonControl( GetParentWindowRef(), &bounds, controlSize, &roundButtonContent, &control ) );
 
 	if ( control )
 	{
@@ -92,16 +148,8 @@ ChasingArrowsSheet::CreateControl()
 
 		::SetControlData( control, 0, kControlSizeTag, sizeof( ControlSize ), &controlSize );
 		
-		//
-		// Prior to Leopard, the chasing arrows control ignored its ControlSize, and only looked at the control bounds,
-		// to determine whether to draw a normal or large image. In Leopard and later, setting the control size is sufficient.
-		// In Leopard and later, the control still uses its bounds if you do not set an explicit ControlSize.
-		//
-		if ( GetSystemVersion() < 0x1050 )
-		{
-			if ( GetBestControlRect( control, &bounds, &baseLine ) == noErr )
-				SetControlBounds( control, &bounds );
-		}
+		if ( GetBestControlRect( control, &bounds, &baseLine ) == noErr )
+			SetControlBounds( control, &bounds );
 	}
 	
 	return control;
