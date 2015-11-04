@@ -33,6 +33,8 @@
 		4F94ECDB07B3086500AE9F13 /* SliderPane.h in Headers */ = {isa = PBXBuildFile; fileRef = 011F740BFE81CB1711CA0E50 /* SliderPane.h */; };
 		4F94ECDC07B3086500AE9F13 /* BevelImageAPIWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 011F740CFE81CB1711CA0E50 /* BevelImageAPIWindow.h */; };
 		4F94ECDD07B3086500AE9F13 /* BevelButtonItems.h in Headers */ = {isa = PBXBuildFile; fileRef = 011F740DFE81CB1711CA0E50 /* BevelButtonItems.h */; };
+		4F94ECDE07B3086500AE9F13 /* PrefixCarbon.h in Headers */ = {isa = PBXBuildFile; fileRef = 011F740FFE81CB1711CA0E50 /* PrefixCarbon.h */; };
+		4F94ECDF07B3086500AE9F13 /* PrefixCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 011F7410FE81CB1711CA0E50 /* PrefixCommon.h */; };
 		4F94ECE007B3086500AE9F13 /* LayoutPane.h in Headers */ = {isa = PBXBuildFile; fileRef = 011F73FCFE81CB1711CA0E50 /* LayoutPane.h */; };
 		4F94ECE107B3086500AE9F13 /* TWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 0889BD69FFA759DF11CA0DE8 /* TWindow.h */; };
 		4F94ECE207B3086500AE9F13 /* ZoomWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 14E37BFBFFA79E0511CA0DE8 /* ZoomWindow.h */; };
@@ -145,31 +147,6 @@
 		4F94ED5107B3086500AE9F13 /* MegaDialog.r in Rez */ = {isa = PBXBuildFile; fileRef = 0106DEEDFEC0AB7511CA0E50 /* MegaDialog.r */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		055EEE14FFA6321B11CA0DE8 /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OPTIMIZATION_CFLAGS = "-O0";
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		055EEE15FFA6321B11CA0DE8 /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXFileReference section */
 		00D0E689FFACEF2F7F000001 /* ListBoxSheet.cp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = ListBoxSheet.cp; sourceTree = "<group>"; };
 		00D0E68BFFACEF577F000001 /* ListBoxSheet.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ListBoxSheet.h; sourceTree = "<group>"; };
@@ -225,6 +202,8 @@
 		011F740BFE81CB1711CA0E50 /* SliderPane.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SliderPane.h; sourceTree = "<group>"; };
 		011F740CFE81CB1711CA0E50 /* BevelImageAPIWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = BevelImageAPIWindow.h; sourceTree = "<group>"; };
 		011F740DFE81CB1711CA0E50 /* BevelButtonItems.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = BevelButtonItems.h; sourceTree = "<group>"; };
+		011F740FFE81CB1711CA0E50 /* PrefixCarbon.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PrefixCarbon.h; sourceTree = "<group>"; };
+		011F7410FE81CB1711CA0E50 /* PrefixCommon.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PrefixCommon.h; sourceTree = "<group>"; };
 		011F7414FE81CB1711CA0E50 /* AppearanceHelpers.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = AppearanceHelpers.c; sourceTree = "<group>"; };
 		011F7417FE81CB1711CA0E50 /* BaseDialog.cp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = BaseDialog.cp; sourceTree = "<group>"; };
 		011F7418FE81CB1711CA0E50 /* BaseWindow.cp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = BaseWindow.cp; sourceTree = "<group>"; };
@@ -384,6 +363,8 @@
 				00D14ED7FFAC99B07F000001 /* PopupArrowSheet.h */,
 				020CCD3D006ABE9311CA0E50 /* PopupButtonSheet.h */,
 				00D3D728FFAB6C707F000001 /* PushButtonSheet.h */,
+				011F740FFE81CB1711CA0E50 /* PrefixCarbon.h */,
+				011F7410FE81CB1711CA0E50 /* PrefixCommon.h */,
 				00D14ED4FFAC957A7F000001 /* ProgressBarSheet.h */,
 				011F7401FE81CB1711CA0E50 /* ProgressPane.h */,
 				011F7402FE81CB1711CA0E50 /* ProxyDialog.h */,
@@ -567,6 +548,8 @@
 				4F94ECDB07B3086500AE9F13 /* SliderPane.h in Headers */,
 				4F94ECDC07B3086500AE9F13 /* BevelImageAPIWindow.h in Headers */,
 				4F94ECDD07B3086500AE9F13 /* BevelButtonItems.h in Headers */,
+				4F94ECDE07B3086500AE9F13 /* PrefixCarbon.h in Headers */,
+				4F94ECDF07B3086500AE9F13 /* PrefixCommon.h in Headers */,
 				4F94ECE007B3086500AE9F13 /* LayoutPane.h in Headers */,
 				4F94ECE107B3086500AE9F13 /* TWindow.h in Headers */,
 				4F94ECE207B3086500AE9F13 /* ZoomWindow.h in Headers */,
@@ -613,7 +596,7 @@
 /* Begin PBXNativeTarget section */
 		4F94ECC207B3086500AE9F13 /* AppearanceSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FD72A3F0884A86400E59E3A /* Build configuration list for PBXNativeTarget "AppearanceSample" */;
+			buildConfigurationList = BE238CF80C347243009528B3 /* Build configuration list for PBXNativeTarget "AppearanceSample" */;
 			buildPhases = (
 				4F94ECC307B3086500AE9F13 /* Headers */,
 				4F94ED0607B3086500AE9F13 /* Resources */,
@@ -624,32 +607,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				APPLICATION_CLASS = NSApplication;
-				BUILD_PHASING = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					/System/Library/Frameworks/Carbon.framework/Frameworks,
-					/System/Library/Frameworks/CoreServices.framework/Frameworks,
-					/System/Library/Frameworks/ApplicationServices.framework/Frameworks,
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AppearanceSamplePrefix.h;
-				GCC_USE_GCC3_PFE_SUPPORT = YES;
-				HEADER_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Libraries/CIncludes\"";
-				INFOPLIST_FILE = "Info-AppearanceSample.plist";
-				LIBRARY_SEARCH_PATHS = "";
-				MAIN_NIB_FILE = "";
-				OTHER_CFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = AppearanceSample;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-			};
 			dependencies = (
 			);
 			name = AppearanceSample;
@@ -663,13 +620,7 @@
 /* Begin PBXProject section */
 		011F73EDFE81CB1711CA0E50 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 4FD72A430884A86400E59E3A /* Build configuration list for PBXProject "AppearanceSample" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				055EEE14FFA6321B11CA0DE8 /* Development */,
-				055EEE15FFA6321B11CA0DE8 /* Deployment */,
-			);
+			buildConfigurationList = BE238CFC0C347243009528B3 /* Build configuration list for PBXProject "AppearanceSample" */;
 			hasScannedForEncodings = 1;
 			mainGroup = 011F73EEFE81CB1711CA0E50 /* AppearanceSample */;
 			projectDirPath = "";
@@ -836,9 +787,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4FD72A400884A86400E59E3A /* Debug */ = {
+		BE238CF90C347243009528B3 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_CLASS = NSApplication;
+				BUILD_PHASING = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					/System/Library/Frameworks/Carbon.framework/Frameworks,
@@ -847,84 +800,139 @@
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AppearanceSamplePrefix.h;
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_USE_GCC3_PFE_SUPPORT = YES;
 				HEADER_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Libraries/CIncludes\"";
 				INFOPLIST_FILE = "Info-AppearanceSample.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				MAIN_NIB_FILE = "";
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = AppearanceSample;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
-			name = Debug;
+			name = Development;
 		};
-		4FD72A410884A86400E59E3A /* Release */ = {
+		BE238CFA0C347243009528B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				APPLICATION_CLASS = NSApplication;
+				BUILD_PHASING = YES;
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					/System/Library/Frameworks/Carbon.framework/Frameworks,
 					/System/Library/Frameworks/CoreServices.framework/Frameworks,
 					/System/Library/Frameworks/ApplicationServices.framework/Frameworks,
 				);
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AppearanceSamplePrefix.h;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_USE_GCC3_PFE_SUPPORT = YES;
 				HEADER_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Libraries/CIncludes\"";
 				INFOPLIST_FILE = "Info-AppearanceSample.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				MAIN_NIB_FILE = "";
+				OTHER_CFLAGS = "";
+				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = AppearanceSample;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		BE238CFB0C347243009528B3 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_CLASS = NSApplication;
+				BUILD_PHASING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/System/Library/Frameworks/Carbon.framework/Frameworks,
+					/System/Library/Frameworks/CoreServices.framework/Frameworks,
+					/System/Library/Frameworks/ApplicationServices.framework/Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AppearanceSamplePrefix.h;
+				GCC_USE_GCC3_PFE_SUPPORT = YES;
+				HEADER_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Libraries/CIncludes\"";
+				INFOPLIST_FILE = "Info-AppearanceSample.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				MAIN_NIB_FILE = "";
+				OTHER_CFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = AppearanceSample;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
 				WRAPPER_EXTENSION = app;
 			};
-			name = Release;
+			name = Default;
 		};
-		4FD72A440884A86400E59E3A /* Debug */ = {
+		BE238CFD0C347243009528B3 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Debug;
+			name = Development;
 		};
-		4FD72A450884A86400E59E3A /* Release */ = {
+		BE238CFE0C347243009528B3 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Release;
+			name = Deployment;
+		};
+		BE238CFF0C347243009528B3 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Default;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4FD72A3F0884A86400E59E3A /* Build configuration list for PBXNativeTarget "AppearanceSample" */ = {
+		BE238CF80C347243009528B3 /* Build configuration list for PBXNativeTarget "AppearanceSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4FD72A400884A86400E59E3A /* Debug */,
-				4FD72A410884A86400E59E3A /* Release */,
+				BE238CF90C347243009528B3 /* Development */,
+				BE238CFA0C347243009528B3 /* Deployment */,
+				BE238CFB0C347243009528B3 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Default;
 		};
-		4FD72A430884A86400E59E3A /* Build configuration list for PBXProject "AppearanceSample" */ = {
+		BE238CFC0C347243009528B3 /* Build configuration list for PBXProject "AppearanceSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4FD72A440884A86400E59E3A /* Debug */,
-				4FD72A450884A86400E59E3A /* Release */,
+				BE238CFD0C347243009528B3 /* Development */,
+				BE238CFE0C347243009528B3 /* Deployment */,
+				BE238CFF0C347243009528B3 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Default;
 		};
 /* End XCConfigurationList section */
 	};
